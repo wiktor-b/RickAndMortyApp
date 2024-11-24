@@ -1,24 +1,24 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {CharacterDetailsStack} from '../CharacterDetails';
 import {TabNavigationStack} from '../TabNavigation';
+import {CharacterDetailsStack} from '../TabNavigation/screens/CharacterDetails'; // Import CharacterDetailsStack
 import {MainStackRoutes} from './Main.routes';
 
-const Tab = createNativeStackNavigator();
+const Stack = createNativeStackNavigator();
 
 export const MainStack = () => {
   return (
-    <Tab.Navigator>
-      <Tab.Screen
+    <Stack.Navigator>
+      <Stack.Screen
         name={MainStackRoutes.TabNavigationStack}
         component={TabNavigationStack}
         options={{headerShown: false}}
       />
-      <Tab.Screen
-        name={MainStackRoutes.CharacterDetailsStack}
+      <Stack.Screen
+        name={MainStackRoutes.CharacterDetailsStack} // Add CharacterDetailsStack
         component={CharacterDetailsStack}
         options={{headerShown: false}}
       />
-    </Tab.Navigator>
+    </Stack.Navigator>
   );
 };
