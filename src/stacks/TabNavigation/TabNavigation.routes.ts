@@ -1,11 +1,8 @@
-import {NavigatorScreenParams} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-import {CharacterListStackParamList} from '../CharacterList/CharacterList.routes';
-import {FavoriteCharactersStackParamList} from '../FavoriteCharacters/FavoriteCharacters.routes';
 
 export type TabNavigationStackParamList = {
-  CharacterListStack: NavigatorScreenParams<CharacterListStackParamList>;
-  FavoriteCharactersStack: NavigatorScreenParams<FavoriteCharactersStackParamList>;
+  CharacterListScreen: undefined;
+  FavoriteCharactersScreen: undefined;
 };
 
 export type TabStackNavigationProp =
@@ -14,6 +11,6 @@ export type TabStackNavigationProp =
 export const TabNavigationStackRoutes: {
   [route in keyof TabNavigationStackParamList]: route;
 } = {
-  CharacterListStack: 'CharacterListStack',
-  FavoriteCharactersStack: 'FavoriteCharactersStack',
+  CharacterListScreen: 'CharacterListScreen',
+  FavoriteCharactersScreen: 'FavoriteCharactersScreen',
 };

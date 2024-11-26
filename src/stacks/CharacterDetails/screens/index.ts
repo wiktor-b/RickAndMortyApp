@@ -1,1 +1,0 @@
-export {CharacterDetailsScreen} from './CharacterDetails';
