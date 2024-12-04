@@ -1,14 +1,21 @@
-import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
+import {QueryClient, QueryClientProvider} from 'react-query';
+import {NavigationContainer} from '@react-navigation/native';
+import {MainStack} from './src/stacks/Main';
+import {ClickOutsideProvider} from 'react-native-click-outside';
 
-import {TabNavigationStack} from './src/stacks/TabNavigation';
+const queryClient = new QueryClient();
 
-function App(): React.JSX.Element {
+const App = () => {
   return (
-    <NavigationContainer>
-      <TabNavigationStack />
-    </NavigationContainer>
+    <ClickOutsideProvider>
+      <QueryClientProvider client={queryClient}>
+        <NavigationContainer>
+          <MainStack />
+        </NavigationContainer>
+      </QueryClientProvider>
+    </ClickOutsideProvider>
   );
-}
+};
 
 export default App;
